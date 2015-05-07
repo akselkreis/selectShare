@@ -1,0 +1,83 @@
+#sharebox {
+  padding: 5px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0) scale(0);
+  background: red;
+  border-radius: 5px;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.67, -0.36, 0.22, 1.36) transform;
+}
+#sharebox::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  border: 10px solid transparent;
+  border-top-color: black;
+  transform: translate(-10px, 0);
+}
+#sharebox a {
+  padding: 5px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+#sharebox.active {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+  transition: 0.3s cubic-bezier(0.67, -0.36, 0.22, 1.36) opacity, 0.3s cubic-bezier(0.67, -0.36, 0.22, 1.36) transform;
+}
+
+.sb-guide {
+  padding: 0 20px;
+}
+@media screen and (min-width: 1000px) {
+  .sb-guide {
+    position: fixed;
+    top: 0;
+    width: 100px;
+    left: 0;
+    padding: 0 10px;
+  }
+}
+.sb-guide p {
+  font-size: 75%;
+  font-family: Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: pink;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.35;
+  color: #2f4461;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+p {
+  margin: 30px auto;
+}
+
+.content {
+  padding: 0 20px 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
