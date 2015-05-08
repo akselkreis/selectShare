@@ -6,7 +6,7 @@
 	top: 0;
 	-webkit-transform: translate(-50%, 0) scale(0);
 	transform: translate(-50%, 0) scale(0);
-	background: #1a1a1a;
+	background: #f1d76d;
 	border-radius: 2px;
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
@@ -23,7 +23,7 @@
 	left: 50%;
 	bottom: -20px;
 	border: 10px solid transparent;
-	border-top-color: #1a1a1a;
+	border-top-color: #f1d76d;
 	-webkit-transform: translate(-10px, 0);
 	transform: translate(-10px, 0);
 }
@@ -32,7 +32,7 @@
 .share-popup a {
 	padding: 5px;
 	text-align: center;
-	color: #ffffff;
+	color: #152638;
 	text-decoration: none;
 }
 
@@ -46,8 +46,8 @@
 }
 
 .sb-guide {
-	background: #1a1a1a;
-	color: #ffffff;
+	background: #f1d76d;
+	color: #152638;
 	display: inline-block;
 	padding: 5px;
 	border-radius: 2px;
@@ -62,7 +62,7 @@
 .sb-guide a {
 	padding: 5px;
 	text-align: center;
-	color: #ffffff;
+	color: #152638;
 	text-decoration: none;
 }
 
@@ -71,6 +71,11 @@
 	top: 0;
 	left: 100%;
 	width: auto;
+	-webkit-transform: translate(0, 0) scale(0);
+	transform: translate(0, 0) scale(0);
+}
+
+.share-popup.active {
 	-webkit-transform: translate(0, 0) scale(1);
 	transform: translate(0, 0) scale(1);
 }

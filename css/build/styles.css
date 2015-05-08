@@ -1,76 +1,160 @@
-/*
-Error: Invalid CSS after "    &": expected ";", was ".active{"
-        on line 86 of scss/selectShare.scss
-        from line 1 of scss/style.scss
+#sharebox,
+.share-popup {
+  padding: 5px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0) scale(0);
+  background: #f1d76d;
+  border-radius: 2px;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.75, -0.4, 0.25, 1.4) transform;
+}
+#sharebox::after,
+.share-popup::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  border: 10px solid transparent;
+  border-top-color: #f1d76d;
+  transform: translate(-10px, 0);
+}
+#sharebox a,
+.share-popup a {
+  padding: 5px;
+  text-align: center;
+  color: #152638;
+  text-decoration: none;
+}
+#sharebox.active,
+.share-popup.active {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+  transition: 0.3s cubic-bezier(0.67, -0.36, 0.22, 1.36) opacity, 0.3s cubic-bezier(0.67, -0.36, 0.22, 1.36) transform;
+}
 
-81:     top: 0;
-82:     left: 100%;
-83:     width: auto;
-84:     transform: translate(0,0)scale(0)
-85: 
-86:     &.active{
-87:         transform: translate(0,0)scale(1)
-88:     }
-89: }
-90: 
-91: 
+.sb-guide {
+  background: #f1d76d;
+  color: #152638;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 2px;
+  position: relative;
+}
+@media screen and (min-width: 1000px) {
+  .sb-guide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+  }
+}
+.sb-guide p {
+  font-size: 75%;
+  font-family: Georgia, serif;
+}
+.sb-guide a {
+  padding: 5px;
+  text-align: center;
+  color: #152638;
+  text-decoration: none;
+}
 
-Backtrace:
-scss/selectShare.scss:86
-scss/style.scss:1
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:761:in `block in try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1141:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1141:in `rethrow'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:766:in `try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:696:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:661:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:642:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:653:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:299:in `to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:313:in `block in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"    &\": expected \";\", was \".active{\"\A         on line 86 of scss/selectShare.scss\A         from line 1 of scss/style.scss\A \A 81:     top: 0;\A 82:     left: 100%;\A 83:     width: auto;\A 84:     transform: translate(0,0)scale(0)\A 85: \A 86:     &.active{\A 87:         transform: translate(0,0)scale(1)\A 88:     }\A 89: }\A 90: \A 91: "; }
+.share-popup {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: auto;
+  transform: translate(0, 0) scale(0);
+}
+.share-popup.active {
+  transform: translate(0, 0) scale(1);
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../../fonts/icomoon.eot?-9uol3v");
+  src: url("../../../fonts/icomoon.eot?#iefix-9uol3v") format("embedded-opentype"), url("../../../fonts/icomoon.woff?-9uol3v") format("woff"), url("../../../fonts/icomoon.ttf?-9uol3v") format("truetype"), url("../../../fonts/icomoon.svg?-9uol3v#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: .8;
+  transition: .15s ease all;
+}
+[class^="icon-"]:hover, [class*=" icon-"]:hover {
+  opacity: 1;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  position: relative;
+}
+[class^="icon-"] span, [class*=" icon-"] span {
+  display: none;
+}
+
+.icon-mail:before {
+  content: "\e600";
+  top: 3px;
+}
+
+.icon-facebook:before {
+  content: "\e601";
+}
+
+.icon-google:before {
+  content: "\e602";
+}
+
+.icon-linkedin:before {
+  content: "\e603";
+}
+
+.icon-twitter:before {
+  content: "\e604";
+  top: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: pink;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.35;
+  color: #2f4461;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+p {
+  margin: 30px auto;
+}
+
+.content {
+  padding: 0 20px 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */

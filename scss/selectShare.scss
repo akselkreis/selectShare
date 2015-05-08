@@ -1,5 +1,5 @@
-$share-color: #1a1a1a;
-$text-color: #ffffff;
+$share-color: #f1d76d;
+$text-color: #152638;
 // $twitter: #55acee;
 // $facebook: #415e9b;
 // $linkedin: #1c87bd;
@@ -81,10 +81,10 @@ $text-color: #ffffff;
     top: 0;
     left: 100%;
     width: auto;
-    transform: translate(0,0)scale(0)
+    transform: translate(0,0)scale(0);
 
     &.active{
-        transform: translate(0,0)scale(1)
+        transform: translate(0,0)scale(1);
     }
 }
 
