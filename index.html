@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/build/minified/styles.css">
         <script src="js/modernizr.js"></script>
-        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+        <!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
     </head>
 <body>
 
@@ -23,7 +23,16 @@
 
     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
     <script src="js/selectShare.js"></script>
-    <script src="js/index.js"></script>
+    <script>
+        $(document).ready(function (){
+          if ( $('html').hasClass('no-touch') ){
+        		$('.content').selectShare({
+                    //fullShare: true
+                });
+        	}
+        });
+    </script>
+
 
 </body>
 
